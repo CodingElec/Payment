@@ -2,13 +2,13 @@ package domain
 
 import "time"
 
-type PaymentIntentStatus string;
+type PaymentIntentStatus string
 
 const (
-	ItentCreated 		PaymentIntentStatus = "created",
-	IntentProcessing 	PaymentIntentStatus = "processed",
-	IntentSucceeded		PaymentIntentStatus = "succeeded",
-	IntentFaile			PaymentIntentStatus = "failed"
+	IntentCreated    PaymentIntentStatus = "created"
+	IntentProcessing PaymentIntentStatus = "processed"
+	IntentSucceeded  PaymentIntentStatus = "succeeded"
+	IntentFaile      PaymentIntentStatus = "failed"
 )
 
 type PaymentIntent struct {

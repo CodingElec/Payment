@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/you/payments/internal/domain"
-	"github.com/you/payments/internal/store/dynamo"
+	"github.com/raf-fml/Payment/internal/domain"
+	"github.com/raf-fml/Payment/internal/store/dynamo"
 )
 
 type createIntentReq struct {

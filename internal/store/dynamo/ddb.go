@@ -20,10 +20,10 @@ func New(ctx context.Context, table, idempo string) (*DB, error) {
 		return nil, err
 	}
 
-	endpoint := "http://localhost:4566" //hardcoded for now.
+	endpoint := "http://localhost:4566" //hardcoded for now. OS env or smth else later.
 	clientOpts := func(o *dynamodb.Options) {
 		if endpoint != "" {
-			o.BaseEndpoint = aws.String(endpoint) // recommended simple approach
+			o.BaseEndpoint = aws.String(endpoint)
 		}
 	}
 

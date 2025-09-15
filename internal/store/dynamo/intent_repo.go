@@ -10,7 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb/types"
 	"github.com/google/uuid"
-	"github.com/you/payments/internal/domain"
+	"github.com/raf-fml/Payment/internal/domain"
 )
 
 func (db *DB) PutPaymentIntent(ctx context.Context, merchantID string, req domain.PaymentIntent) (domain.PaymentIntent, error) {
@@ -47,7 +47,7 @@ func (db *DB) PutPaymentIntent(ctx context.Context, merchantID string, req domai
 	}
 	payload, _ := json.Marshal(intent)
 	ev.Payload = payload
-	evItem := marshalOutboxItem(intent.IntentID, ev)
+	evItem := marshalOutboxItem(intent.IntentID, ev) //need to create this on outbox repo.
 
 	_, err := db.Cli.TransactWriteItems(ctx, &dynamodb.TransactWriteItemsInput{
 		TransactItems: []types.TransactWriteItem{
